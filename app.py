@@ -7,6 +7,8 @@ MONGO_URI = os.getenv('MONGO_URI', "Env value not loaded")
 
 app = Flask(__name__)
 
+mongo = PyMongo(app)
+
 @app.route('/')
 def hello():
     return 'Hello World... again'
