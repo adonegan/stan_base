@@ -5,8 +5,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'stan_base'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI', "Env value not loaded")
+app.config['MONGO_DBNAME'] = 'stan_base'
+app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'Env value not loaded')
 
 mongo = PyMongo(app)
 
