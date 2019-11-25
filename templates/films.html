@@ -4,9 +4,10 @@
 <ul class="collapsible" data-collapsible="accordion">
     {% for film in films %}
     <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i> {{film.film_name}} - {{film.film_year}} 
+        <div class="collapsible-header"><i class="material-icons">expand_more</i> {{film.film_name}} - {{film.film_year}} 
         </div>
-        <div class="collapsible-body"><span> {{film.film_plot}} </span>
+        <div class="collapsible-body"><span> 
+            <h5>Film Plot</h5> {{film.film_plot}} <h5>My recommendation</h5>{{film.film_rec}} </span>
         </div>
     </li>
     {% endfor %}
