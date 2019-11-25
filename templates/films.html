@@ -1,13 +1,9 @@
-<html>
-    <head>
+{% extends 'base.html' %}
+{% block content %}
 
-    </head>
-    <body>
         {% for film in films %}
             {{film.film_name}}
             {{film.film_year}}
             {{film.film_rec}}
         {% endfor %}
-
-    </body>
-</html>
+{% endblock %}
