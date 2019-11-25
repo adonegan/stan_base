@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-        {% for film in films %}
-            {{film.film_name}}
-            {{film.film_year}}
-            {{film.film_rec}}
-        {% endfor %}
+<ul class="collapsible" data-collapsible="accordion">
+    {% for film in films %}
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i> {{film.film_name}} - {{film.film_year}} 
+        </div>
+        <div class="collapsible-body"><span> {{film.film_plot}} </span>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
