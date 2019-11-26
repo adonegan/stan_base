@@ -19,7 +19,8 @@ def get_films():
 
 @app.route('/add_film')
 def add_film():
-    return render_template('addfilm.html')    
+    return render_template('addfilm.html',
+    genres=mongo.db.genres.find())    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
