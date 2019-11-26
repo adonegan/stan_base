@@ -6,35 +6,37 @@
 </head>
 
 <body>
-    <h1>Stanbase</h1>
-    <h5>Winona Ryder</h5>
-    {% block content %}
-    {% endblock %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.collapsible').collapsible(); // Materialize
-            $('select').material_select(); // code from Code Institute videos
-        });
+    <div class="container">
+        <h1>Stanbase</h1>
+        <h5>Winona Ryder</h5>
+        {% block content %}
+        {% endblock %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.collapsible').collapsible(); // Materialize
+                $('select').material_select(); // code from Code Institute videos
+            });
 
-        // code from Code Institute
-        $('.datepicker').pickadate({ 
-            selectMonths: true,
-            selectYears: 33, // Winona Ryder has been acting since 1986
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
-        });
-        
-        // Code Institude fix for Chrome v Materialize issue
-        document.getElementById("matfix").addEventListener("click", function (e) {
-            e.stopPropagation();
-        });
+            // code from Code Institute
+            $('.datepicker').pickadate({
+                selectMonths: true,
+                selectYears: 33, // Winona Ryder has been acting since 1986
+                today: 'Today',
+                clear: 'Clear',
+                close: 'Ok',
+                closeOnSelect: false // Close upon selecting a date,
+            });
+
+            // Code Institude fix for Chrome v Materialize issue
+            document.getElementById("matfix").addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
 
 
-    </script>
+        </script>
+    </div>
 </body>
 
 </html>
