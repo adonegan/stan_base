@@ -21,6 +21,18 @@
         </div>
         <div class="row">
             <div class="input-field col s6">
+                <i class="material-icons prefix">assessment</i>
+                <select id="genre" name="genre_type">
+                    <option value="" disabled selected>Choose Genre</option>
+                    {% for gen in genres %}
+                        <option value="{{gen.genre_type}}">{{gen.genre_type}}</option>
+                    {% endfor %}
+                </select>
+                <label>Genre</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
                 <i class="material-icons prefix">menu_book</i>
                 <textarea id="film_plot" name="film_plot" class="materialize-textarea"></textarea>
                 <label for="icon-prefix">Plot</label>
