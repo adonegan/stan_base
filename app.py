@@ -21,7 +21,15 @@ def get_films():
 @app.route('/add_film')
 def add_film():
     return render_template('addfilm.html',
-    genres=mongo.db.genres.find())    
+    genres=mongo.db.genres.find())
+
+
+@app.route('/insert_film', methods=['POST'])     
+def insert_film():
+    films = mongo.db.films
+    films.insert_one(request.form.to_dict())
+    return redirect(url_for('get_films'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
