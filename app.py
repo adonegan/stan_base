@@ -17,6 +17,10 @@ mongo = PyMongo(app)
 def get_films():
     return render_template("films.html", films=mongo.db.films.find())
 
+@app.route('/add_film')
+def add_film():
+    return render_template('addfilm.html')    
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
     port=os.environ.get('PORT', '5000'),
