@@ -1,7 +1,7 @@
 import os 
 from os import path
 if path.exists("env.py"):
-    import env
+    import env #to import environment variables
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -15,7 +15,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_films')
 def get_films():
-    return render_template("films.html", films=mongo.db.films.find())
+    return render_template("films.html", 
+    films=mongo.db.films.find())
 
 @app.route('/add_film')
 def add_film():
