@@ -2,20 +2,20 @@
 {% block content %}
 
 <h4>Add Film</h4>
-
+<!----------------------------- form to users can input information -------------------------->
 <div class="row">
     <form action="" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">movie</i>
-                <input id="film_name" name="film_name" type="text" class="validate">
+                <input id="film_name" name="film_name" type="text" class="validate"> <!--for adding text only-->
                 <label for="icon-prefix">Movie</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">star</i>
-                <input id="co_star" type="text" name="co_star" class="validate">
+                <input id="co_star" type="text" name="co_star" class="validate"> <!--for adding text only-->
                 <label for="icon-prefix">Co-star</label>
             </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="input-field col s6">
                 <i class="material-icons prefix">assessment</i>
                 <select id="genre" name="genre_type">
-                    <option value="" disabled selected>Choose Genre</option>
+                    <option value="" disabled selected>Choose Genre</option> <!--for selecting between options -->
                     {% for gen in genres %}
                         <option value="{{gen.genre_type}}">{{gen.genre_type}}</option>
                     {% endfor %}
@@ -34,21 +34,21 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">menu_book</i>
-                <textarea id="film_plot" name="film_plot" class="materialize-textarea"></textarea>
+                <textarea id="film_plot" name="film_plot" class="materialize-textarea"></textarea> <!--for adding longer text -->
                 <label for="icon-prefix">Plot</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">favorite</i>
-                <textarea id="film_rec" name="film_rec" class="materialize-textarea"></textarea>
+                <textarea id="film_rec" name="film_rec" class="materialize-textarea"></textarea> <!--for adding longer text -->
                 <label for="icon-prefix">Why I love this movie</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6" id="matfix">
                 <i class="material-icons prefix">today</i>
-                <input id="date_watched" name="date_watched" type="text" class="datepicker">
+                <input id="date_watched" name="date_watched" type="text" class="datepicker"> <!--for including a date -->
                 <label for="icon_prefix">Date Watched</label>
             </div>
         </div>
