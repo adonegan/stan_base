@@ -3,17 +3,17 @@
 
 
 <div class="row">
-    <div class="col s8">
+    <div class="col s12">
         <ul class="collapsible popout" data-collapsible="accordion">
             {% for film in films %}
             <li>
-                <div class="collapsible-header" class="col s6">
+                <div class="collapsible-header">
                     <i class="material-icons">movie</i>
                     <h5>{{film.film_name}} ({{film.film_year}}) </h5>
                 </div>
 
 
-                <div class="collapsible-body" class="col s6"><span>
+                <div class="collapsible-body"><span>
                         <h5>Co-star</h5> {{film.co_star}}
                         <h5>Film Plot</h5> {{film.film_plot}}
                         <h5>Genre</h5> {{film.genre_type}}
@@ -29,12 +29,6 @@
             </li>
             {% endfor %}
         </ul>
-    </div>
-
-
-    <div class="col s4">
-        Placeholder
-
     </div>
 </div>
 
