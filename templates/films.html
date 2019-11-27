@@ -1,18 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<ul class="collapsible" data-collapsible="accordion">
-    {% for film in films %}
-    <li>
-        <div class="collapsible-header"><i class="material-icons">movie</i> <h5>{{film.film_name}} ({{film.film_year}}) </h5>
-        </div>
-        <div class="collapsible-body"><span>
-            <h5>Film Plot</h5> {{film.film_plot}} 
-            <h5>My recommendation</h5>{{film.film_rec}}
-            <h5>Co-star</h5> {{film.co_star}} </span>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+
+<div class="row">
+    <div class="col s12">
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for film in films %}
+            <li>
+                <div class="collapsible-header" class="col s8">
+                    <i class="material-icons">movie</i>
+                    <h5>{{film.film_name}} ({{film.film_year}}) </h5>
+                    <div class="col s4">
+                        <a class="waves-effect waves-light btn">Edit</a>
+                        <a class="waves-effect waves-light btn">Remove</a>
+                    </div>
+                </div>
+
+
+                <div class="collapsible-body" class="col s6"><span>
+                        <h5>Co-star</h5> {{film.co_star}}
+                        <h5>Film Plot</h5> {{film.film_plot}}
+                        <h5>Genre</h5> {{film.genre_type}}
+                        <h5>My recommendation</h5>{{film.film_rec}}
+                        <h5>Date I watched</h5> {{film.date_watched}}
+                    </span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div class="col s4">
+        Placeholder
+
+    </div>
+</div>
 
 {% endblock %}
