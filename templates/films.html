@@ -3,17 +3,13 @@
 
 
 <div class="row">
-    <div class="col s12">
+    <div class="col s8">
         <ul class="collapsible" data-collapsible="accordion">
             {% for film in films %}
             <li>
-                <div class="collapsible-header" class="col s8">
+                <div class="collapsible-header" class="col s6">
                     <i class="material-icons">movie</i>
                     <h5>{{film.film_name}} ({{film.film_year}}) </h5>
-                    <div class="col s4">
-                        <a class="waves-effect waves-light btn">Edit</a>
-                        <a class="waves-effect waves-light btn">Remove</a>
-                    </div>
                 </div>
 
 
@@ -22,10 +18,12 @@
                         <h5>Film Plot</h5> {{film.film_plot}}
                         <h5>Genre</h5> {{film.genre_type}}
                         <h5>My recommendation</h5>{{film.film_rec}}
-                        <h5>Date I watched</h5> {{film.date_watched}}
+                        <h5>Date I watched</h5> {{film.date_watched}} <br>
 
-                        <a class="waves-effect waves-light btn">Edit</a>
-                        <a class="waves-effect waves-light btn">Remove</a>
+                        <p>
+                            <a class="waves-effect waves-light btn">Edit</a>
+                            <a class="waves-effect waves-light btn">Remove</a>
+                        </p>
                     </span>
                 </div>
             </li>
