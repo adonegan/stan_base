@@ -30,6 +30,12 @@ def insert_film():
     films.insert_one(request.form.to_dict())
     return redirect(url_for('get_films'))
 
+@app.route('/edit_film/<film_id>')
+def edit_film(film_id):
+    the_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
+    all_genres = mongo.db.genres.find()
+    return render_template('editfilm.html', film=the_film, genres=all_genres)    
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
