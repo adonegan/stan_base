@@ -46,8 +46,8 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">menu_book</i>                                   <!-- validate and value not rendering-->
-                <input id="film_plot" name="film_plot" class="validate" value="{{film.film_plot}}" >
+                <i class="material-icons prefix">menu_book</i>                        <!-- validate and value not rendering // keep testing -->
+                <textarea id="film_plot" name="film_plot" class="materialize-textarea" class="validate" value="{{film.film_plot}}"></textarea>
                 <!--for adding longer text -->
                 <label for="icon-prefix">Plot</label>
             </div>
@@ -55,7 +55,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">favorite</i>
-                <textarea id="film_rec" name="film_rec" class="materialize-textarea" ></textarea>
+                <textarea id="film_rec" name="film_rec" class="materialize-textarea" class="validate" value="{{film.film_plot}}"></textarea>
                 <!--for adding longer text -->
                 <label>Why I love this movie</label>
             </div>
