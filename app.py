@@ -37,6 +37,23 @@ def edit_film(film_id):
     return render_template('editfilm.html', film=the_film, genres=all_genres)    
 
 
+@app.route('/update_film/<film_id>', methods=["POST"])
+def update_film(film_id):
+    films = mongo.db.films
+    films.update({'_id': ObjectId(film_id)},
+    {
+        'film_name':request.form.get('film_name'),
+        'film_year':request.form.get('film_year'),
+        'co_stars':request.form.get('co_stars'),
+        'genre_type':request.form.get('genre_type'),
+        'film_plot': request.form.get('film_plot'),
+        'film_rec': request.form.get('film_rec'),
+        'date_watched': request.form.get('date_watched'),
+    })
+    return redirect(url_for('get_films'))
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
     port=os.environ.get('PORT', '5000'),
