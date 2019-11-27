@@ -8,13 +8,13 @@
         <div class="row">
             <div class="input-field col s8">
                 <i class="material-icons prefix">movie</i>
-                <input id="film_name" name="film_name" type="text" class="validate">
+                <input id="film_name" name="film_name" type="text" class="validate" value="{{film.film_name}}">
                 <!--for adding text only-->
                 <label for="icon-prefix">Movie</label>
             </div>
             <div class="input-field col s4">
                 <i class="material-icons prefix">timeline</i>
-                <input id="film_year" name="film_year" type="tel" class="validate">
+                <input id="film_year" name="film_year" type="tel" class="validate" value="{{film.film_year}}">
                 <!--for adding text only-->
                 <label for="icon-prefix">Year</label>
             </div>
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">star</i>
-                <input id="co_star" type="text" name="co_star" class="validate">
+                <input id="co_star" type="text" name="co_star" class="validate" value="{{film.co_star}}">
                 <!--for adding text only-->
                 <label for="icon-prefix">Co-star</label>
             </div>
@@ -34,7 +34,11 @@
                     <option value="" disabled selected>Choose Genre</option>
                     <!--for selecting between options -->
                     {% for gen in genres %}
-                    <option value="{{gen.genre_type}}">{{gen.genre_type}}</option>
+                        {% if gen.genre_type == film.genre_type%}
+                        <option value="{{gen.genre_type}}" selected >{{gen.genre_type}}</option>
+                        {% else %}
+                        <option value="{{gen.genre_type}}" >{{gen.genre_type}}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label>Genre</label>
@@ -43,7 +47,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">menu_book</i>
-                <textarea id="film_plot" name="film_plot" class="materialize-textarea"></textarea>
+                <textarea id="film_plot" name="film_plot" class="materialize-textarea" class="validate" value="{{film.co_plot}}" ></textarea>
                 <!--for adding longer text -->
                 <label for="icon-prefix">Plot</label>
             </div>
@@ -51,7 +55,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">favorite</i>
-                <textarea id="film_rec" name="film_rec" class="materialize-textarea"></textarea>
+                <textarea id="film_rec" name="film_rec" class="materialize-textarea" ></textarea>
                 <!--for adding longer text -->
                 <label for="icon-prefix">Why I love this movie</label>
             </div>
@@ -65,11 +69,20 @@
             </div>
         </div>
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add Film
+            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Film
                 <i class="material-icons right">send</i>
             </button>
         </div>
     </form>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--Script from Code Institute video-->
+<script>
+    $(document).ready(function(){
+        date_watched = Date.parse('{{film.date_watched}}')
+        $('#date_watched').pickadate('picker').set('select', date_watched, {format: 'dd/mm/yyyy'}).trigger('change')
+    });
+</script>
 
 {% endblock %}
