@@ -7,6 +7,25 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Stanbase // Winona Ryder</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="{{url_for('get_films')}}">Films</a></li>
+                    <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
+                    <li><a href="{{url_for('add_film')}}">Add Film</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{url_for('get_films')}}">Films</a></li>
+                    <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
+                    <li><a href="{{url_for('add_film')}}">Add Film</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
         <h1>Stanbase</h1>
         <h5>Winona Ryder</h5>
@@ -19,6 +38,7 @@
         $(document).ready(function () {
             $('.collapsible').collapsible(); // Materialize
             $('select').material_select(); // code from Code Institute videos
+            $(".button-collapse").sideNav(); // Materialize
         });
 
         // code from Code Institute
