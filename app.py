@@ -59,6 +59,11 @@ def delete_film(film_id):
     return redirect(url_for('get_films'))
 
 
+@app.route('/get_genres')
+def get_genres():
+    return render_template('genres.html', genres=mongo.db.genres.find())    
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
     port=os.environ.get('PORT', '5000'),
