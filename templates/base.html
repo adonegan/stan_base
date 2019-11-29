@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
 
-<body>
+<body class="white">
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">Stanbase // Winona Ryder</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="{{url_for('get_films')}}">Films</a></li>
-                    <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
-                    <li><a href="{{url_for('add_film')}}">Add Film</a></li>
+            <div class="nav-wrapper teal accent-2">
+                <a href="#" class="brand-logo center black-text">STANBASE</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile black-text" class="left hide-on-med-and-down">
+                    <li><a href="{{url_for('get_films')}}" class="black-text">Films</a></li>
+                    <li><a href="{{url_for('get_genres')}}" class="black-text">Manage Genres</a></li>
+                    <li><a href="{{url_for('add_film')}}" class="black-text">Add Film</a></li>
                 </ul>
-                <ul class="side-nav" id="mobile-demo">
+                <ul class="side-nav black-text" id="mobile-demo">
                     <li><a href="{{url_for('get_films')}}">Films</a></li>
                     <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
                     <li><a href="{{url_for('add_film')}}">Add Film</a></li>
