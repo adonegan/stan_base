@@ -53,6 +53,11 @@ def update_film(film_id):
     return redirect(url_for('get_films'))
 
 
+@app.route('/delete_film/<film_id>')
+def delete_film(film_id):
+    mongo.db.films.delete_one({'_id': ObjectId(film_id)})
+    return redirect(url_for('get_films'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
