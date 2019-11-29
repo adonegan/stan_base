@@ -5,7 +5,7 @@
 
     <h4>Genres</h4>
 
-
+<div class="row">
     <div class="col s12">
         <ul class="collapsible popout" data-collapsible="accordion">
             {% for genre in genres %}
@@ -24,6 +24,9 @@
             {% endfor %}
         </ul>
     </div>
-
+</div>
+<div class="row">
+        <a href="{{url_for('add_genre')}}" class="waves-effect waves-light btn">Add New Genre</a>
+</div>
 
     {% endblock %}
