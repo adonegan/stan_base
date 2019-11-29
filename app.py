@@ -61,7 +61,20 @@ def delete_film(film_id):
 
 @app.route('/get_genres')
 def get_genres():
-    return render_template('genres.html', genres=mongo.db.genres.find())    
+    return render_template('genres.html', genres=mongo.db.genres.find())   
+
+
+@app.route('/edit_genre/<genre_id>')
+def edit_genre(genre_id):
+    return render_template('editgenre.html',genre=mongo.db.genres.find_one({'_id': ObjectId(genre_id)})) 
+
+
+@app.route('/update_genre/<genre_id>', methods=["POST"])
+def update_genre(genre_id):
+    mongo.db.genres.update(
+        {'_id': ObjectId(genre_id)},
+        {'genre_type':request.form.get('genre_type')})
+    return redirect(url_for('get_genres'))        
 
 
 if __name__ == '__main__':
