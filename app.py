@@ -74,7 +74,13 @@ def update_genre(genre_id):
     mongo.db.genres.update(
         {'_id': ObjectId(genre_id)},
         {'genre_type':request.form.get('genre_type')})
-    return redirect(url_for('get_genres'))        
+    return redirect(url_for('get_genres')) 
+
+
+@app.route('/delete_genre/<genre_id>')
+def delete_genre(genre_id):
+    mongo.db.genres.delete_one({'_id': ObjectId(genre_id)})
+    return redirect(url_for('get_genres'))           
 
 
 if __name__ == '__main__':
