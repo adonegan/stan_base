@@ -13,12 +13,12 @@
                 <a href="#" class="brand-logo center white-text">Stanbase !</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i
                         class="material-icons">menu</i></a>
-                <ul id="nav-mobile black-text" class="left hide-on-med-and-down">
+                <ul id="nav-mobile black-text" class="right hide-on-med-and-down">
                     <li><a href="{{url_for('get_films')}}" class="white-text">Films</a></li>
                     <li><a href="{{url_for('get_genres')}}" class="white-text">Manage Genres</a></li>
                     <li><a href="{{url_for('add_film')}}" class="white-text">Add Film</a></li>
                 </ul>
-                <ul class="side-nav black-text" id="mobile-demo">
+                <ul class="side-nav black-text" id="mobile-demo" class="show-on-med">
                     <li><a href="{{url_for('get_films')}}">Films</a></li>
                     <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
                     <li><a href="{{url_for('add_film')}}">Add Film</a></li>
