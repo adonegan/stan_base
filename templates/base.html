@@ -10,15 +10,15 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center white-text">Stanbase !</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse white-text"><i
+                <a href="#" class="brand-logo">Stanbase !</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i
                         class="material-icons">menu</i></a>
-                <ul id="nav-mobile black-text" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_films')}}" class="white-text">Films</a></li>
-                    <li><a href="{{url_for('get_genres')}}" class="white-text">Manage Genres</a></li>
-                    <li><a href="{{url_for('add_film')}}" class="white-text">Add Film</a></li>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="{{url_for('get_films')}}">Films</a></li>
+                    <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
+                    <li><a href="{{url_for('add_film')}}">Add Film</a></li>
                 </ul>
-                <ul class="side-nav black-text" id="mobile-demo" class="show-on-med">
+                <ul class="side-nav" id="mobile-demo">
                     <li><a href="{{url_for('get_films')}}">Films</a></li>
                     <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
                     <li><a href="{{url_for('add_film')}}">Add Film</a></li>
@@ -27,10 +27,10 @@
         </nav>
     </header>
     <main>
-         <div class="container"> 
-        {% block content %}
-        {% endblock %}
-         </div> 
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
     </main>
     <footer>
 
@@ -58,7 +58,6 @@
         document.getElementById("matfix").addEventListener("click", function (e) {
             e.stopPropagation();
         });
-
 
     </script>
 </body>
