@@ -1,34 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <ul class="collapsible popout" data-collapsible="accordion">
+                {% for film in films %}
+                <li>
+                    <div class="collapsible-header">
+                        <h5>{{film.film_name}} ({{film.film_year}}) </h5>
+                    </div>
 
-<div class="row">
-    <div class="col s12">
-        <ul class="collapsible popout" data-collapsible="accordion">
-            {% for film in films %}
-            <li>
-                <div class="collapsible-header">
-                    <h5>{{film.film_name}} ({{film.film_year}}) </h5>
-                </div>
+                    <div class="collapsible-body"><span>
+                            <h5>Co-stars</h5> {{film.co_stars}}
+                            <h5>Film Plot</h5> {{film.film_plot}}
+                            <h5>Genre</h5> {{film.genre_type}}
+                            <h5>My recommendation</h5>{{film.film_rec}}
+                            <h5>Date I watched</h5> {{film.date_watched}} <br>
 
-                <div class="collapsible-body"><span>
-                        <h5>Co-stars</h5> {{film.co_stars}}
-                        <h5>Film Plot</h5> {{film.film_plot}}
-                        <h5>Genre</h5> {{film.genre_type}}
-                        <h5>My recommendation</h5>{{film.film_rec}}
-                        <h5>Date I watched</h5> {{film.date_watched}} <br>
-
-                        <p>
-                            <a href="{{url_for('edit_film', film_id=film._id)}}"
-                                class="waves-effect waves-light btn">Edit</a>
-                            <a href="{{url_for('delete_film', film_id=film._id)}}"
-                                class="waves-effect waves-light btn">Remove</a>
-                        </p>
-                    </span>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
+                            <p>
+                                <a href="{{url_for('edit_film', film_id=film._id)}}"
+                                    class="waves-effect waves-light btn">Edit</a>
+                                <a href="{{url_for('delete_film', film_id=film._id)}}"
+                                    class="waves-effect waves-light btn">Remove</a>
+                            </p>
+                        </span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </div>
 
