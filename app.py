@@ -96,6 +96,11 @@ def add_genre():
     return render_template('addgenre.html')    
 
 
+@app.route('/about')
+def about():
+    return render_template("about.html")  
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
     port=os.environ.get('PORT', '5000'),
