@@ -1,32 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row">
+<div class="container">
+    <div class="row">
 
-    <h4>Genres</h4>
+        <h4>Genres</h4>
+    </div>
 
-<div class="row">
-    <div class="col s12">
-        <ul class="collapsible popout" data-collapsible="accordion">
-            {% for genre in genres %}
-            <li>
-                <div class="collapsible-header">
-                    <h5>{{genre.genre_type}}</h5>
+    <div class="row">
+        <div class="col s12">
+            <ul class="collapsible popout" data-collapsible="accordion">
+                {% for genre in genres %}
+                <li>
+                    <div class="collapsible-header">
+                        <h5>{{genre.genre_type}}</h5>
 
-                    <hr>
+                        <hr>
 
-                    <p>
-                        <a href="{{url_for('edit_genre', genre_id=genre._id)}}" class="waves-effect waves-light btn">Edit</a>
-                        <a href="{{url_for('delete_genre', genre_id=genre._id)}}" class="waves-effect waves-light btn">Remove</a>
-                    </p>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
+                        <p>
+                            <a href="{{url_for('edit_genre', genre_id=genre._id)}}"
+                                class="waves-effect waves-light btn">Edit</a>
+                            <a href="{{url_for('delete_genre', genre_id=genre._id)}}"
+                                class="waves-effect waves-light btn">Remove</a>
+                        </p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <a href="{{url_for('add_genre')}}" class="waves-effect waves-light btn">Add New Genre</a>
     </div>
 </div>
-<div class="row">
-        <a href="{{url_for('add_genre')}}" class="waves-effect waves-light btn">Add New Genre</a>
-</div>
 
-    {% endblock %}
+{% endblock %}
