@@ -50,3 +50,33 @@ footer {
 .noni {
     color: black;
 }
+
+.card-image {
+    position: relative;
+    border: 2px double black
+}
+
+.stanbase {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 26px;
+    text-align: center;
+    color: black;
+}
+
+.card-about {
+    border: 2px dotted black;
+    padding: 9px 15px;
+    position: relative;
+    margin-top: 5px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    color: black;
+    
+
+}
+
+.about-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+}
