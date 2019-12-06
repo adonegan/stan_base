@@ -54,6 +54,7 @@ def update_film(film_id):
         'film_plot': request.form.get('film_plot'),
         'film_rec': request.form.get('film_rec'),
         'date_watched': request.form.get('date_watched'),
+        'winona_stan': request.form.get('winona_stan')
     })
     return redirect(url_for('get_films'))
 
