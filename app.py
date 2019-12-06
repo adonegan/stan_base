@@ -13,6 +13,11 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'Env value not loaded')
 mongo = PyMongo(app)
 
 @app.route('/')
+@app.route('/home')
+def home():
+    return render_template("home.html")      
+
+
 @app.route('/get_films')
 def get_films():
     return render_template("films.html", 
@@ -100,9 +105,7 @@ def add_genre():
 def about():
     return render_template("about.html")  
 
-@app.route('/home')
-def home():
-    return render_template("home.html")      
+
 
 
 if __name__ == '__main__':
