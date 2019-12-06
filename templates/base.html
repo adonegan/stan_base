@@ -11,11 +11,11 @@
 <body>
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">Stanbase !</a>
+            <div class="nav-wrapper green accent-2">
+                <a href="#" class="brand-logo center black-text">Stanbase !</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="{{url_for('get_films')}}">Films</a></li>
+                    <li><a href="{{url_for('get_films')}}" class="nav-items">Films</a></li>
                     <li><a href="{{url_for('get_genres')}}">Manage Genres</a></li>
                     <li><a href="{{url_for('add_film')}}">Add Film</a></li>
                     <li><a href="{{url_for('about')}}">About</a></li>
@@ -74,6 +74,7 @@
         });
 
     </script>
+
 </body>
 
 </html>
