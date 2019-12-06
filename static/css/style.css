@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
+body {
+    background-color: honeydew;
+}
 
 /* Home page */
 
@@ -26,27 +29,34 @@
 /* Navbar on desktop and mobile - not on landing page */
 
 .nav-wrapper {
-    background: #000000;
+    background: #ff7315;
 }
 
 .brand-logo {
     font-family: 'Dancing Script', cursive;
     font-weight: 600;
     font-size: 45px;
-    text-align: center;
+}
+
+.material-icons {
+    color: #232020;
+}
+
+.nav-items {
+    color: black;
 }
 
 /* Main pop out feature to showcase films list */
 
 .collapsible-header{
     background: #fff;
-    color: #333333;
+    color: #2e279d;
     border-radius: 5px;
     font-family: 'Quicksand', sans-serif;
 
 }
 .collapsible-body {
-    background: #333333;
+    background: #2e279d;
     color: #fff; 
     border-radius: 5px;
     font-family: 'Quicksand', sans-serif;
@@ -58,7 +68,7 @@
 footer {
     width: 100%;
     height: 150px;
-    background: #000000;
+    background: #69f0ae;
     margin-top: 10px;
 }
 
@@ -84,6 +94,7 @@ footer {
     font-size: 18px;
     color: black;
     text-align: justify;
+
 }
 
 .about-title {
@@ -110,4 +121,19 @@ footer {
 
 .noni {
     color: black;
+}
+
+
+.card-panel {
+    background-color: #2e279d;
+    border-radius: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+.welcome {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 20px;
+    
 }
