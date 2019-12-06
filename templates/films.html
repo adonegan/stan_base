@@ -5,7 +5,7 @@
 <div class="slider">
     <ul class="slides">
         <li>
-            <img src="http://www.kisax.com/images/Winona-Ryder/Winona-Ryder-14.JPG"> 
+            <img src="http://www.sheclick.com/wp-content/uploads/2011/01/Winona-Ryder-Hot-Pictures.jpg">
             <div class="caption left-align">
                 <h3 class="noni">Winona Ryder</h3>
                 <h5 class="noni">With Stanbase! You can record how you feel about your favourite star's films!</h5>
@@ -13,19 +13,25 @@
         </li>
     </ul>
 </div>
-<div class="container">
+
+
     <div class="row">
 
-        <div class="col s12 m5 lg">
-            <div class="card-panel teal">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively. I am similar to what is called a
-                    panel in other frameworks.
+        <div class="col s12 l4">
+            <div class="card-panel grey darken-4">
+                <span class="white-text">
+                    <p class="welcome">Welcome STANS!</p>
+
+                    <p>Below you'll find a list of Winona Ryder films that have been reviewed. Go ahead and add to the
+                        list if your favourite movie isn't included!</p>
+
+                        <p>And remember, as a die hard Stan, this is your datasbase. Add, edit, read and delete (if you think starting fresh is best)</p>
                 </span>
             </div>
         </div>
 
-        <div class="col s12 m5 l6 ">
+
+        <div class="col s12 l8">
             <ul class="collapsible popout" data-collapsible="accordion">
                 {% for film in films %}
                 <li>
@@ -53,7 +59,7 @@
             </ul>
         </div>
     </div>
-</div>
+
 
 
 {% endblock %}
