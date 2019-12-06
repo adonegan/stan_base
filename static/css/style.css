@@ -81,3 +81,22 @@ footer {
 .divider {
     margin-bottom: 20px;
 }
+
+.cover-image {
+    background-image: url(https://m.media-amazon.com/images/M/MV5BNTAxMDExZDMtYzA2Ni00YTBiLThlYzQtZDVmN2NlMzVlZWM1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_SX1777_CR0,0,1777,963_AL_.jpg);
+    height: 100vh;
+    background-size: cover;
+    margin: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* this and above: YouTube tutorial DevTips https://www.youtube.com/watch?v=hExwnLlj2xk */
+    background-position: center; /* W3Schools*/ 
+    background-repeat: no-repeat; /* W3Schools*/ 
+    background-size: cover; /* W3Schools*/ 
+}
+
+.btn-large {
+    text-transform: capitalize;
+} 
