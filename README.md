@@ -36,23 +36,45 @@ Users of StanBase will have the ability to read, add, edit, update and delete fi
 
 ### Existing Features
 
-Navbar
+#### Cover page
 
-Form
+* Primarily a design feature to greet users to the website.
 
-Sidenav
+#### Navbar
 
-Slider 
+* This feature was added with Materialize and styled with this tools built-in color options. The power of this feature is displayed with url_for functions in Flask. The purpose of the navbar is to direct users to the correct location of the pages on the website.
 
-Collapsible 
+#### Form
 
-Genre collapsible
+* To add films to the database, users input their own content using a form. This form is from Materialize and has seven fields to input text and one select dropdown - this last feature was added to give users more control over how their content displays. It also engineers another way users can manipulate the web application.
 
-Edit / remove buttons
+#### Material icons
 
-Edit / remove icons
+* Visual symbols are used throughout the website for design, style and space purposes. They function as visual representation for the input the user will add information too, while also giving added a modern and sleek field to the site. 
 
-Card panels
+#### Sidenav
+
+* The sidenav is used primarily for mobile view as a way to neatly display quicklinks to the functional elements on the site. The sidenav uses Materialize code and is rendered functional by jQuery. The sidenav can be activated by tapping the hamburger menu icon. 
+
+#### Buttons
+
+* There are two types of buttons on the site style-wise: block buttons with a background color and clickable icons buttons (on the genre page). The buttons' purpose is to direct visitors to the correct location and to insert, update and remove database content. Buttons are from Materialize, using their color themes too. 
+
+#### Slider 
+
+* The slider is Materialize code with jQuery to initialize the slider aspect and is primarily used to showcase images. Its design takes up 50% of the page, which means users can see the visual element and some content beneath it. It comes with a visual slider indicator, which has been modified to blend into the background.
+
+#### Collapsible 
+
+* The collapsible pop-out is used in order to display the user input. The pop-out aspect adds a jump out effect for the user and adds an element of animation to the page. It works with jQuery added in script tags in the base.html page.
+
+#### Genre collapsible
+
+* The genre page uses the collapsible pop-out feature but is repurposed without the collapsible body so it only displays the header, which pops out when selected - this adds a dynamic visual effect and is the main purpose of the pop-out feature - that, and continuity. Users can add new genres, edit existing genres or remove genres completely.
+
+#### Card panels
+
+* This feature was used throughout the website to add consistent structure to content on the site. It is mostly used on the about html page to layout the information of the three sections. The panels were then styled using the built-in design features of Materialize (which are added within the html tags) and using my own CSS specifications.
 
 ### Features Left to Implement
 
@@ -88,6 +110,10 @@ Login feaature
 
 * This tool was used to create, maintain and add to my code, instead of using an IDE that was internet dependent. I was able to add my files and keep them stored together. It also helped me with committing my code concisely. 
 
+#### Material.io
+
+Icons
+
 #### GitHub
 
 * My repository of code is stored on GitHub. It enabled me to easily commit my code and have a place to store my work. On GitHub I can refer to back to stages of my code and progress. 
@@ -114,6 +140,15 @@ Try it out features
 
 Issues
 
+| Number        | Issue           | Resolution  |
+| ------------- | ------------- | -----|
+| 1  | Datepicker | - |
+| 2  | Brackets in form      |   Added specific input field for year information |
+| 3  | CSS not rendering     |    Cleared cache and used Incognito Window for testing |
+| 4  | Plot and recommendations not displaying | Input was textarea, moved {{}} to between tags not inside value attribute|
+| 5  | Sidenav not displaying on mobile | Added meta viewport tag in head section |
+| 6  | Genre page, button on next line | Changed button style to icon button to create space|
+|    |  |  |
 
 
 ## Deployment
