@@ -36,11 +36,85 @@ Users of StanBase will have the ability to read, add, edit, update and delete fi
 
 ### Existing Features
 
+Navbar
+
+Form
+
+Sidenav
+
+Slider 
+
+Collapsible 
+
+Genre collapsible
+
+Edit / remove buttons
+
+Edit / remove icons
+
+Card panels
+
 ### Features Left to Implement
+
+Login feaature
 
 ## Technologies Used
 
+#### HTML5
+
+* I used HTML5 to structure my web app. I started with HTML tags and then used header, body and footer sections. Using this technology helped me to keep my layout clear and organised.
+
+#### CSS3
+
+* I modified the look of my site using my own CSS3 code (in conjunction with Materialize - see below). Using CSS I was able to change the colors on my side and the font style. I was also able to increase padding on card-panels too.
+
+#### Javascript
+
+* I used Javascript to queue my jQuery. I also used an JS fix for the datepicker, which was provided by Code Institute. I added JS CDNs to enable them on my site.
+
+#### Materialize
+
+* I used Materialize for the main structural features, including the navbar and the add film form. I was also able to modify the look of my site using the code provided by this tool.
+
+#### jQuery
+
+* I used jQuery to add functionality to my HTML features. In particular, I was able to add a pop out dropdown collapsible items, select genre dropdown, menu icon and slider form images.
+
+#### Jinja
+
+* The template engine Jinja enabled me to extend my base html page to other pages on my website. This helped me avoid repetition throughout my code and refer to pages through links.
+
+#### VSCode
+
+* This tool was used to create, maintain and add to my code, instead of using an IDE that was internet dependent. I was able to add my files and keep them stored together. It also helped me with committing my code concisely. 
+
+#### GitHub
+
+* My repository of code is stored on GitHub. It enabled me to easily commit my code and have a place to store my work. On GitHub I can refer to back to stages of my code and progress. 
+
+#### Google Fonts
+
+Using Google Fonts I was able to import specific font styling to my website. With this tool I was able to add Dancing Script: Cursive and Quicksand to my website. 
+
+#### Heroku
+
+* I used Heroku to deploy my project as it supports sites with Python and Flask, unlike GitHub Pages. Using this platform, I was also able to add my environment variables and configured my site. 
+
+#### Balsamiq
+
+* I used Balsamiq to outline the initial look of my web application. I mainly focused on the look of the form page and the summary page - it would have been best to consider each page and styling beforehand. 
+
 ## Testing
+
+General
+
+Big feature issues
+
+Try it out features
+
+Issues
+
+
 
 ## Deployment
 
