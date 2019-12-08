@@ -151,10 +151,18 @@ footer {
 /* To remove indicator as only one image used in slider */
 
 .slider .indicators .indicator-item.active {
-    background-color: #fff;
+    background-color: black;
 }
 
 .noni {
+    color: black;
+}
+
+h3.image-text {
+    color: black;
+}
+
+h5.image-text {
     color: black;
 }
 
