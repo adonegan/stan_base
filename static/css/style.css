@@ -14,12 +14,46 @@ body {
     margin: 0;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column-reverse;
+   /* justify-content: center; */
     align-items: center; /* this and above: YouTube tutorial DevTips https://www.youtube.com/watch?v=hExwnLlj2xk */
     background-position: center; /* W3Schools*/ 
     background-repeat: no-repeat; /* W3Schools*/ 
     background-size: cover; /* W3Schools*/ 
+    /* border: 10px ridge #2e279d; */
+    border: 8px ridge black;
+    /* opacity: 1.0; */
+    padding-bottom: 50px;
+}
+
+.home-title {
+    font-family: 'Dancing script', cursive;
+    font-weight: 900;
+    font-size: 40px;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 80px;
+    margin-right: 80px;
+    text-align: center;
+    background: black;
+    opacity: 0.6;
+    padding-bottom: 25px;
+    padding-top: 10px;
+}
+
+.home-subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+}
+
+.home-button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: white;
 }
 
 .btn-large {
@@ -85,6 +119,7 @@ footer {
     font-size: 30px;
     color: black;
 }
+
 
 .card-about {
     padding: 0px 20px;
