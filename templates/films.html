@@ -5,62 +5,70 @@
 <div class="slider">
     <ul class="slides">
         <li>
-            <img src="http://www.sheclick.com/wp-content/uploads/2011/01/Winona-Ryder-Hot-Pictures.jpg">
+            <img src="{{url_for('static', filename='images/ryder-films.jpg')}}" />
             <div class="caption left-align">
-                <h3 class="noni">Winona Ryder</h3>
-                <h5 class="noni">With Stanbase! You can record how you feel about your favourite star's films!</h5>
+                <h3 class="image-text">Winona Ryder</h3>
+                <h5 class="image-text">With Stanbase! You can record how you feel about your favourite star's films!</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{url_for('static', filename='images/ryder-films2.png')}}" />
+            <div class="caption left-align">
+                <h3 class="image-text">Winona Ryder</h3>
+                <h5 class="image-text">With Stanbase! You can record how you feel about your favourite star's films!</h5>
             </div>
         </li>
     </ul>
 </div>
 
 
-    <div class="row">
+<div class="row">
 
-        <div class="col s12 l4">
-            <div class="card-panel grey darken-4">
-                <span class="white-text">
-                    <p class="welcome">Welcome STANS!</p>
+    <div class="col s12 l4">
+        <div class="card-panel grey darken-4">
+            <span class="white-text">
+                <p class="welcome">Welcome STANS!</p>
 
-                    <p>Below you'll find a list of Winona Ryder films that have been reviewed. Go ahead and add to the
-                        list if your favourite movie isn't included!</p>
+                <p>Below you'll find a list of Winona Ryder films that have been reviewed. Go ahead and add to the
+                    list if your favourite movie isn't included!</p>
 
-                        <p>And remember, as a die hard Stan, this is your datasbase. Add, edit, read and delete (if you think starting fresh is best). So everyone know it's your input, sign off in the Stan field.</p>
-                </span>
-            </div>
-        </div>
-
-
-        <div class="col s12 l8">
-            <ul class="collapsible popout" data-collapsible="accordion">
-                {% for film in films %}
-                <li>
-                    <div class="collapsible-header">
-                        <h5>{{film.film_name}} ({{film.film_year}}) </h5>
-                    </div>
-
-                    <div class="collapsible-body"><span>
-                            <h5>Co-stars</h5> {{film.co_stars}}
-                            <h5>Film Plot</h5> {{film.film_plot}}
-                            <h5>Genre</h5> {{film.genre_type}}
-                            <h5>My recommendation</h5>{{film.film_rec}}
-                            <h5>Date I watched</h5> {{film.date_watched}} <br>
-                            <h5>Stan</h5> {{film.winona_stan}} <br>
-
-
-                            <p>
-                                <a href="{{url_for('edit_film', film_id=film._id)}}"
-                                    class="waves-effect waves-light btn">Edit</a>
-                                <a href="{{url_for('delete_film', film_id=film._id)}}"
-                                    class="waves-effect waves-light btn">Remove</a>
-                            </p>
-                        </span>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+                <p>And remember, as a die hard Stan, this is your datasbase. Add, edit, read and delete (if you think
+                    starting fresh is best). So everyone know it's your input, sign off in the Stan field.</p>
+            </span>
         </div>
     </div>
+
+
+    <div class="col s12 l8">
+        <ul class="collapsible popout" data-collapsible="accordion">
+            {% for film in films %}
+            <li>
+                <div class="collapsible-header">
+                    <h5>{{film.film_name}} ({{film.film_year}}) </h5>
+                </div>
+
+                <div class="collapsible-body"><span>
+                        <h5>Co-stars</h5> {{film.co_stars}}
+                        <h5>Film Plot</h5> {{film.film_plot}}
+                        <h5>Genre</h5> {{film.genre_type}}
+                        <h5>My recommendation</h5>{{film.film_rec}}
+                        <h5>Date I watched</h5> {{film.date_watched}} <br>
+                        <h5>Stan</h5> {{film.winona_stan}} <br>
+
+
+                        <p>
+                            <a href="{{url_for('edit_film', film_id=film._id)}}"
+                                class="waves-effect waves-light btn">Edit</a>
+                            <a href="{{url_for('delete_film', film_id=film._id)}}"
+                                class="waves-effect waves-light btn">Remove</a>
+                        </p>
+                    </span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
 
 
