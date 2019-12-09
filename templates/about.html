@@ -2,55 +2,37 @@
 {% block content %}
 
 
-
-<div class="container-fluid">
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="{{url_for('static', filename='images/beetlejuice.jpg')}}" />
-            </li>
-            <li>
-                <img src="{{url_for('static', filename='images/reality-bites.jpg')}}" /> <!--test for responsive look-->
-            </li>
-            <li>
-                <img src="{{url_for('static', filename='images/edward-scissorhands.jpg')}}" />
-            </li>
-        </ul>
-    </div>
-
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <div class="about-title">About...</div>
+            <div class="about-title">Everything you need to know about...</div>
         </div>
     </div>
 
     <!-- A brief section to explain what Stanbase is all about -->
-
+    <div class="row">
+        <div class="col s12">
+            <span class="card-title"><span class="stanbase-about">Stanbase !</span>
+        </div>
+    </div>
     <div class="row">
         <div class="col s12 m6 l6">
-            <span class="card-title"><span class="stanbase">Stanbase !</span>
-                <div class="card blue-grey">
-                    <div class="card-image">
-                        <img
-                            src="http://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:95975?quality=0.8&format=jpg&width=1440&height=810&.jpg">
-                    </div>
+            <div class="card blue-grey">
+                <div class="card-image">
+                    <img
+                        src="http://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:95975?quality=0.8&format=jpg&width=1440&height=810&.jpg">
                 </div>
-            </span>
+            </div>
         </div>
 
         <div class="col s12 m6 l6">
             <div class="card-about white">
-                <div class="card-content black-text">
-                    <p> Have you ever loved something so much that you want to write all about it? Well, this
-                        is where Stanbase ! comes from. This is where you keep a record of stuff you love!
-                        of something you love. <br><br>
-                        This Stanbase! is a database in honour of actress Winona Ryder. Read about her films and
-                        what Stans think. Any stan can read, edit, update or even remove the records!
-                    </p>
-                </div>
+                <p> Have you ever loved something so much that you want to write all about it? Well, this
+                    is where Stanbase ! comes from. This is where you keep a record of stuff you love!
+                    of something you love. <br><br>
+                    This Stanbase! is a database in honour of actress Winona Ryder. Read about her films and
+                    what Stans think. Any stan can read, edit, update or even remove the records!
+                </p>
             </div>
         </div>
     </div>
@@ -60,26 +42,28 @@
     <!-- A brief section to explain who Winona Ryder is -->
 
     <div class="row">
+        <div class="col s12">
+            <span class="card-title"><span class="stanbase-about">Winona</span>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col s12 m6 l6">
-            <span class="card-title"><span class="stanbase">Winona !</span>
-                <div class="card blue-grey">
-                    <div class="video-container">
-                        <iframe width="853" height="480" src="//www.youtube.com/embed/6a5h3r3ziLw?rel=0" frameborder="0"
-                            allowfullscreen></iframe>
-                    </div>
+            <div class="card blue-grey">
+                <div class="video-container">
+                    <iframe width="853" height="480" src="//www.youtube.com/embed/6a5h3r3ziLw?rel=0" frameborder="0"
+                        allowfullscreen></iframe>
                 </div>
-            </span>
+            </div>
         </div>
         <div class="col s12 m6 l6">
             <div class="card-about white">
-                <div class="card-content black-text">
-                    <p> Winona Ryder is an American actress, known currently for her role as Joyce Byers in Netflix's
-                        hit science-fiction-horror TV show Stranger Things. <br><br>
-                        Having started acting in 1986, you'll most likely know her for her roles in late eighties /
-                        early nineties cult classics like Heathers, Beetlejuice, Dracula and Reality Bites.
-                        This Stanbase! keeps a record of all of them!
-                    </p>
-                </div>
+                <p> Winona Ryder is an American actress, known currently for her role as Joyce Byers in Netflix's
+                    hit science-fiction-horror TV show Stranger Things. <br><br>
+                    Having started acting in 1986, you'll most likely know her for her roles in late eighties /
+                    early nineties cult classics like Heathers, Beetlejuice, Dracula and Reality Bites.
+                    This Stanbase! keeps a record of all of them!
+                </p>
             </div>
         </div>
 
@@ -90,27 +74,29 @@
     <!-- A brief section to explain this Stanbase's creator -->
 
     <div class="row">
+        <div class="col s12">
+            <span class="stanbase-about">Stans</span>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col s12 m6 l6">
-            <span class="card-title"><span class="stanbase">Stan !</span>
-                <div class="card blue-grey">
-                    <div class="card-image">
-                        <img
-                            src="http://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:95975?quality=0.8&format=jpg&width=1440&height=810&.jpg">
-                    </div>
+            <div class="card blue-grey">
+                <div class="card-image">
+                    <img
+                        src="http://imagesmtv-a.akamaihd.net/uri/mgid:ao:image:mtv.com:95975?quality=0.8&format=jpg&width=1440&height=810&.jpg">
                 </div>
-            </span>
+            </div>
         </div>
 
         <div class="col s12 m6 l6">
             <div class="card-about white">
-                <div class="card-content black-text">
-                    <p> Hi fellow Winona stans! My name is Aileen and this is the Stanbase! I've created. Feel free
-                        to add to any records you want, including removing records you don't agree with! <br><br>
-                        If you don't see a record on a film in the list, add it! If you think something more could be
-                        said about a film already on the list, update it! This is the place Winona stans of the world
-                        unite!
-                    </p>
-                </div>
+                <p> Hi fellow Winona stans! My name is Aileen and this is the Stanbase! I've created. Feel free
+                    to add to any records you want, including removing records you don't agree with! <br><br>
+                    If you don't see a record on a film in the list, add it! If you think something more could be
+                    said about a film already on the list, update it! This is the place Winona stans of the world
+                    unite!
+                </p>
             </div>
         </div>
     </div>
