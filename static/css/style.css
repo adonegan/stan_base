@@ -161,6 +161,13 @@ footer {
     margin-top: 30px;
 }
 
+.about-form {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+
 .caption {
     padding-top: 150px;
     font-family: 'Quicksand', sans-serif;
