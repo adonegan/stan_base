@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <!-- For viewports e.g. mobile styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper green accent-2">
+                <a href="#" class="brand-logo center black-text">Stanbase !</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+                </ul>
+                <!-- pages for sidenav on mobile -->
+                <ul class="side-nav center" id="mobile-demo">
+                    <li>
+                        <div class="user-view">
+                            <div class="background black">
+                            </div>
+                            <div>
+                                <a href=""><span class="stanbase white-text center">Stanbase!</span></a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="{{url_for('about')}}" class="sidenav-items">About</a></li>
+                    <div class="divider"></div>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.collapsible').collapsible(); // Materialize
+            $('select').material_select(); // code from Code Institute videos
+            $('.button-collapse').sideNav(); // Materialize
+            $('.slider').slider({
+                height: 500, // makes image longer on screen
+                indicators: false, // hides slider indicator
+                interval: 3000, // time between image change
+                transition: 800, // time between side transition, text change
+            }
+            );
+        });
+
+        // code from Code Institute
+        $('.datepicker').pickadate({
+            selectMonths: true,
+            selectYears: 70, // Winona Ryder has been acting since 1986 // 35 years either side of 2019
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+
+        // Code Institute fix for Chrome v Materialize issue
+        document.getElementById("matfix").addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+
+    </script>
+
+</body>
+
+</html>
