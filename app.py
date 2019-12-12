@@ -61,6 +61,13 @@ def register():
         flash("Username already taken!")    
     return render_template('signup.html')
 
+
+@app.route('/logout')
+def logout():
+    session.pop('username')
+    return redirect(url_for('home'))
+
+
 @app.route('/get_films')
 def get_films():
     return render_template("films.html",
