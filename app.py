@@ -35,8 +35,8 @@ def login():
                             login_user['password']) == login_user['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for('welcome'))
-            flash("Incorrect username/password")
-        flash("Incorrect username/password")
+            flash("Uh oh! Bad username/password combination. Try again!")
+        flash("Uh oh! Bad username/password combination. Try again!")
     return render_template('login.html')
 
 
@@ -60,7 +60,7 @@ def register():
                                 'password' : hashpass})
             session['username'] = request.form['username']
             return redirect(url_for('welcome'))
-        flash("Username already taken!")    
+        flash("Oh no! Think of another username!")    
     return render_template('signup.html')
 
 
