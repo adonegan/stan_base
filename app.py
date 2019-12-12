@@ -42,7 +42,7 @@ def login():
 
 @app.route('/welcome')
 def welcome():
-    username = session["username"]
+    username = session['username']
     return render_template('welcome.html', username=username)
 
 
@@ -70,8 +70,8 @@ def logout():
 
 @app.route('/get_films')
 def get_films():
-    username = session["username"]
-    return render_template("films.html", username=username, films=mongo.db.films.find())
+    username = session['username']
+    return render_template("films.html", films=mongo.db.films.find(), username=username)
 
 @app.route('/add_film')
 def add_film():
