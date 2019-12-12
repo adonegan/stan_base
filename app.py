@@ -70,7 +70,9 @@ def logout():
 
 @app.route('/get_films')
 def get_films():
+    username = session["username"]
     return render_template("films.html",
+    username=username,
     films=mongo.db.films.find())
 
 @app.route('/add_film')
