@@ -2,25 +2,68 @@ import os
 from os import path
 if path.exists("env.py"):
     import env #to import environment variables
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import bcrypt
 
 app = Flask(__name__)
+
+app.secret_key = os.getenv("SECRET_KEY")
 app.config['MONGO_DBNAME'] = 'stan_base'
 app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'Env value not loaded')
 
+
 mongo = PyMongo(app)
+
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template("home.html")     
+    return render_template("home.html")   
 
+
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'username' : request.form['username']})
+        if login_user:
+            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), 
+                            login_user['password']) == login_user['password']:
+                session['username'] = request.form['username']
+                return redirect(url_for('welcome'))
+            flash("Incorrect username/password")
+        flash("Incorrect username/password")
+    return render_template('login.html')
+
+
+@app.route('/welcome')
+def welcome():
+    username = session["username"]
+    return render_template('welcome.html', username=username)
+
+
+
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        users = mongo.db.users
+        existing_user = users.find_one({'username' : request.form['username']})
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+            users.insert_one({'username' : request.form['username'],
+                                'password' : hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('welcome'))
+        flash("Username already taken!")    
+    return render_template('signup.html')
 
 @app.route('/get_films')
 def get_films():
-    return render_template("films.html", 
+    return render_template("films.html",
     films=mongo.db.films.find())
 
 @app.route('/add_film')
