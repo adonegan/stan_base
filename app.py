@@ -42,9 +42,11 @@ def login():
 
 @app.route('/welcome')
 def welcome():
-    username = session['username']
-    return render_template('welcome.html', username=username)
-
+    if 'username' in session:
+        username = session['username']
+        return render_template('welcome.html', username=username)
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/register', methods=['POST', 'GET'])
