@@ -157,6 +157,15 @@ footer {
     text-align: justify;
 }
 
+.card-about-dark {
+    padding: 0px 10px;
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+}
+
 .about-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 40px;
@@ -171,6 +180,15 @@ footer {
     margin-top: 30px;
 }
 
+div.welcome-title {
+    font-family: 'Dancing script', cursive;
+    font-size: 50px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .caption {
     padding-top: 170px;
