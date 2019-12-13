@@ -1,25 +1,62 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="{{url_for('static', filename='images/ryder-films.jpg')}}" />
-                <div class="caption left-align">
-                    <h3 class="image-text">Winona Ryder</h3>
-                    <h5 class="image-text">With <span class="stanbase">Stanbase !</span> You can record how you feel about
-                        your favourite star's films!</h5>
-                </div>
-            </li>
-            <li>
-                <img src="{{url_for('static', filename='images/ryder-films2.png')}}" />
-                <div class="caption left-align">
-                    <h3 class="image-text">Winona Ryder</h3>
-                    <h5 class="image-text">With <span class="stanbase">Stanbase !</span> You can record how you feel about
-                        your favourite star's films!</h5>
-                </div>
-            </li>
-        </ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="{{url_for('static', filename='images/ryder-films.jpg')}}" />
+                    <div class="caption left-align">
+                        <h3 class="image-text">Winona Ryder</h3>
+                        <h5 class="image-text">With <span class="stanbase">Stanbase !</span> You can record how you feel about your favourite star's films!</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="{{url_for('static', filename='images/ryder-films2.png')}}" />
+                    <div class="caption left-align">
+                        <h3 class="image-text">Winona Ryder</h3>
+                        <h5 class="image-text">With <span class="stanbase">Stanbase !</span> You can record how you feel
+                            about
+                            your favourite star's films!</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="welcome-title">Welcome Stan!</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m6 l6">
+            <div class="card-about white">
+                <p class="welcome">Welcome STANS!</p>
+                <p> Below you'll find a list of Winona Ryder films that have been reviewed. Go ahead and add to the
+                    list if your favourite movie isn't included!
+
+                    And remember, as a die hard Stan, this is your datasbase. Add, edit, read and delete (if you
+                    think starting fresh is best). So everyone know it's your input, sign off in the Stan field.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col s12 m6 l6">
+            <div class="card-about-dark white">
+                <p class="welcome">Welcome STANS!</p>
+                <p> Below you'll find a list of Winona Ryder films that have been reviewed. Go ahead and add to the
+                    list if your favourite movie isn't included!
+
+                    And remember, as a die hard Stan, this is your datasbase. Add, edit, read and delete (if you
+                    think starting fresh is best). So everyone know it's your input, sign off in the Stan field.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
