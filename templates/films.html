@@ -3,10 +3,15 @@
 
 <!-- modified slider feature -->
 
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="film-title">Tap a film to read more about it...</div>
+        </div>
+    </div>
 
-<div class="container-fluid grey darken-4">
-    <div class="row footer">
-        <div class="col s12 l6 offset-l2">
+    <div class="row">
+        <div class="col s12">
             <ul class="collapsible popout" data-collapsible="accordion">
                 {% for film in films %}
                 <li>
@@ -34,6 +39,14 @@
                 </li>
                 {% endfor %}
             </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <blockquote>
+                <em>" I've loved making movies. I feel like I've been so lucky because I've gotten to be in movies that are some of my favorites, regardless of my being in them - like 'Heathers' "</em> <div class="right-align ref">- Winona Ryder</div>
+            </blockquote>
         </div>
     </div>
 </div>
