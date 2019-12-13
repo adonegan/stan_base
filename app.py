@@ -81,7 +81,8 @@ Visitors are redirected to the homepage."""
 
 @app.route('/logout')
 def logout():
-    session.pop('username')
+    if 'username' in session:
+        session.pop('username')
     return redirect(url_for('home'))
 
 
@@ -89,13 +90,21 @@ def logout():
   
 @app.route('/get_films')
 def get_films():
-    username = session['username']
-    return render_template("films.html", films=mongo.db.films.find(), username=username)
+    if 'username' in session:
+        username = session['username']
+        return render_template("films.html", films=mongo.db.films.find(), username=username)
+    else:
+        return render_template('login.html')
+        
 
 @app.route('/add_film')
 def add_film():
-    return render_template('addfilm.html',
-    genres=mongo.db.genres.find())
+    if 'username' in session:
+        username = session['username']
+        return render_template('addfilm.html', genres=mongo.db.genres.find(), username=username)
+    else:
+        return render_template('login.html')
+
 
 @app.route('/insert_film', methods=['POST'])     
 def insert_film():
@@ -132,7 +141,12 @@ def delete_film(film_id):
 
 @app.route('/get_genres')
 def get_genres():
-    return render_template('genres.html', genres=mongo.db.genres.find())   
+    if 'username' in session:
+        username = session['username']
+        return render_template('genres.html', genres=mongo.db.genres.find(), username=username)   
+    else:
+        return render_template('login.html')
+    
 
 
 @app.route('/edit_genre/<genre_id>')
