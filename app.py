@@ -17,12 +17,17 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'Env value not loaded')
 mongo = PyMongo(app)
 
 
+"""The first page users see when visiting the app."""
+
+
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template("home.html")   
 
 
+
+"""Users click on button and are taken to login page by default."""
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -40,6 +45,9 @@ def login():
     return render_template('login.html')
 
 
+
+"""If user exists and password is correct, user taken to welcome page."""
+
 @app.route('/welcome')
 def welcome():
     if 'username' in session:
@@ -47,6 +55,9 @@ def welcome():
         return render_template('welcome.html', username=username)
     else:
         return redirect(url_for('login'))
+
+
+"""New users click the signup button, are directed to register page."""
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -64,12 +75,18 @@ def register():
     return render_template('signup.html')
 
 
+"""Users click on logout nav item to close session. 
+Visitors are redirected to the homepage."""
+
+
 @app.route('/logout')
 def logout():
     session.pop('username')
     return redirect(url_for('home'))
 
 
+"""Functions and routes to direct users to films page to see database entries, to add, edit, update and delete films from app and database"""
+  
 @app.route('/get_films')
 def get_films():
     username = session['username']
@@ -80,19 +97,17 @@ def add_film():
     return render_template('addfilm.html',
     genres=mongo.db.genres.find())
 
-
 @app.route('/insert_film', methods=['POST'])     
 def insert_film():
     films = mongo.db.films
     films.insert_one(request.form.to_dict())
-    return redirect(url_for('get_films'))
+    return redirect(url_for('get_films'))     
 
 @app.route('/edit_film/<film_id>')
 def edit_film(film_id):
     the_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     all_genres = mongo.db.genres.find()
     return render_template('editfilm.html', film=the_film, genres=all_genres)    
-
 
 @app.route('/update_film/<film_id>', methods=["POST"])
 def update_film(film_id):
@@ -110,12 +125,10 @@ def update_film(film_id):
     })
     return redirect(url_for('get_films'))
 
-
 @app.route('/delete_film/<film_id>')
 def delete_film(film_id):
     mongo.db.films.delete_one({'_id': ObjectId(film_id)})
     return redirect(url_for('get_films'))
-
 
 @app.route('/get_genres')
 def get_genres():
@@ -152,13 +165,13 @@ def insert_genre():
 @app.route('/add_genre')
 def add_genre():
     return render_template('addgenre.html')    
+  
 
+"""Route to about page"""
 
 @app.route('/about')
 def about():
     return render_template("about.html")  
-
-
 
 
 if __name__ == '__main__':
