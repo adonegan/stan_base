@@ -87,7 +87,13 @@ def logout():
 
 
 """Functions and routes to direct users to films page to see database entries, to add, edit, update and delete films from app and database"""
-  
+
+@app.route('/about-us')
+def about_us():
+    return render_template("about-us.html")
+
+
+
 @app.route('/get_films')
 def get_films():
     if 'username' in session:
