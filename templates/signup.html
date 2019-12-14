@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="row login-register">
+    <div class="row login-register-forms">
         <form method=POST action="{{ url_for('register') }}">
             <div class="input-field col s12">
                 <input type="text" name="username">
@@ -21,7 +21,7 @@
             </div>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
-            <div class="text-center second-font flash">
+            <div class="flash-messages">
                 {% for message in messages %}
                 <p>{{ message }}</p>
                 {% endfor %}
@@ -30,7 +30,6 @@
             {% endwith %}
 
             <div class="col s12">
-                <!--<a class="waves-effect waves-light btn" type="submit">Register</a>-->
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
             </div>
         </form>
