@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap');
 
 body {
     background-color: #fff;
 }
 
-
-/* Home page */
+/* --------------------------------------- Home / landing page ------------------------------------------ */
 
 .cover-image {
     background-image: url(https://m.media-amazon.com/images/M/MV5BNTAxMDExZDMtYzA2Ni00YTBiLThlYzQtZDVmN2NlMzVlZWM1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_SX1777_CR0,0,1777,963_AL_.jpg);
@@ -16,14 +15,11 @@ body {
     color: white;
     display: flex;
     flex-direction: column-reverse;
-   /* justify-content: center; */
     align-items: center; /* this and above: YouTube tutorial DevTips https://www.youtube.com/watch?v=hExwnLlj2xk */
-    background-position: center; /* W3Schools*/ 
-    background-repeat: no-repeat; /* W3Schools*/ 
-    background-size: cover; /* W3Schools*/ 
-    /* border: 10px ridge #2e279d; */
+    background-position: center; /* W3Schools */ 
+    background-repeat: no-repeat; /* W3Schools */ 
+    background-size: cover; /* W3Schools */ 
     border: 8px ridge black;
-    /* opacity: 1.0; */
     padding-bottom: 50px; 
 }
 
@@ -45,15 +41,15 @@ body {
 
 .home-subtitle {
     font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 20px;
     color: white;
 }
 
 .home-button {
     font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    font-size: 25px;
+    font-weight: 400;
+    font-size: 20px;
     color: white;
 }
 
@@ -61,11 +57,7 @@ body {
     text-transform: capitalize;
 } 
 
-/* Navbar on desktop and mobile - not on landing page */
-
-.nav-wrapper {
-    background: #ff7315;
-}
+/* -------------------------- Navbar and logo on desktop and mobile - not on landing page ----------------------- */
 
 .brand-logo {
     font-family: 'Dancing Script', cursive;
@@ -73,28 +65,15 @@ body {
     font-size: 45px;
 }
 
-.material-icons {
-    color: #232020;
-}
-
-.nav-items {
-    color: black;
-    font-family: 'Quicksand', sans-serif;
-}
-
+.nav-items,
 .sidenav-items {
     color: black;
     font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
 }
 
-.non-links {
-    color: black;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-    padding-left: 15px;
-}
-
-/* Main pop out feature to showcase films list */
+/* ---------------------------- Main pop out feature to showcase films list ------------------------------------- */
 
 .collapsible-header{
     background: #212121;
@@ -105,26 +84,36 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: 700;
 }
+
 .collapsible-body {
     background: #2e279d;
     color: #fff; 
     border-radius: 5px;
     font-family: 'Quicksand', sans-serif;
-
+    font-weight: 400;
 }
 
-/* Footer section */
+span {
+    font-size: 18px; /* for form submission styling */
+}
+
+a.green.accent-2.black-text.btn {
+    font-weight: 600;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* ----------------------------------------------- Footer section ----------------------------------------------- */
 
 footer {
     width: 100%;
     height: 150px;
     background: #69f0ae;
-   /* margin-top: 10px; */
 }
 
-
-/* About page */
+/* -------------------------------------------------- About page ----------------------------------------------- */
 
 .card-image {
     position: relative;
@@ -158,28 +147,6 @@ footer {
     text-align: justify;
 }
 
-.card-about-dark {
-    padding: 0px 10px;
-    position: relative;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    color: black;
-    text-align: justify;
-}
-
-.about-title {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.about-form {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 30px;
-}
 
 div.welcome-title {
     font-family: 'Dancing script', cursive;
@@ -197,28 +164,13 @@ div.welcome-title {
     color: black;
 }
 
-
-/* To remove indicator as only one image used in slider */
-
-.slider .indicators .indicator-item.active {
-    background-color: black;
-}
-
-.noni {
-    color: black;
-}
-
+h5.image-text,
 h3.image-text {
-    color: black;
-}
-
-h5.image-text {
     color: black;
 }
 
 
  .card-panel {
- /*   background-color: #2e279d; */
     border-radius: 8px;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
@@ -231,26 +183,13 @@ h5.image-text {
     
 }
 
-.row.footer {
-    margin-bottom: 0;
-}
+/* ---------------------------------------------- Page titles --------------------------------------------------- */
 
-
-.signup-title {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.login-title {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.film-title {
+.signup-title,
+.login-title,
+.film-title,
+.about-form-title,
+.about-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 40px;
     text-align: center;
@@ -258,19 +197,14 @@ h5.image-text {
 }
 
 
-.login-register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 blockquote {
     background-color: white;
     color: #2e279d;
     font-family: 'Quicksand', sans-serif;
     font-size: 26px;
-    font-weight: 500;
-    border: 1px #2e279d solid;
+    font-weight: 400;
+    border: 1px #2e279d dotted;
     border-radius: 5px;
     padding: 20 20 20 20;
 }
@@ -280,7 +214,7 @@ blockquote.dark {
     color: white;
     font-family: 'Quicksand', sans-serif;
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 400;
     border: 1px #2e279d solid;
     border-radius: 5px;
     padding: 20 20 20 20;
@@ -288,5 +222,45 @@ blockquote.dark {
 
 .ref {
     font-size: 20px;
+}
+
+div.video-container.stan {
+    margin-bottom: 40px;
+}
+
+.material-icons {
+    color: #232020;
+}
+
+.login-register-forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flash-messages {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin: 10 10;
+    color: crimson;
+}
+
+.signup-prompt {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin: 10 10;
+    color: black;
+}
+
+a {
+   color: #2e279d;
+}
+
+div.input-field.col.s12 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.row.footer {
+    margin-bottom: 0;
 }
 
