@@ -16,7 +16,7 @@
                 <a href="{{url_for('welcome')}}" class="brand-logo center black-text">Stanbase !</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="{{url_for('welcome')}}" class="sidenav-items">Welcome</a></li>
+                    <li><a href="{{url_for('welcome')}}" class="nav-items">Welcome</a></li>
                     <li><a href="{{url_for('get_films')}}" class="nav-items">Films</a></li>
                     <li><a href="{{url_for('add_film')}}" class="nav-items">Add Film</a></li>
                     <li><a href="{{url_for('about')}}" class="nav-items">About</a></li>
@@ -45,7 +45,6 @@
     <main>
 
         <div class="container-fluid">
-
             <div class="row">
                 <div class="slider">
                     <ul class="slides">
@@ -60,9 +59,7 @@
                             <img src="{{url_for('static', filename='images/ryder-films2.png')}}" />
                             <div class="caption left-align">
                                 <h3 class="image-text">Winona Ryder</h3>
-                                <h5 class="image-text">With <span class="stanbase">Stanbase !</span> You can record how you feel
-                                    about
-                                    your favourite star's films!</h5>
+                                <h5 class="image-text">With <span class="stanbase">Stanbase !</span> You can record how you feel about your favourite star's films!</h5>
                             </div>
                         </li>
                     </ul>
@@ -93,7 +90,7 @@
             );
         });
 
-        // code from Code Institute
+        // code from Code Institute / Materialize
         $('.datepicker').pickadate({
             selectMonths: true,
             selectYears: 70, // Winona Ryder has been acting since 1986 // 35 years either side of 2019
