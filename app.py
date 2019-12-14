@@ -71,7 +71,7 @@ def register():
                                 'password' : hashpass})
             session['username'] = request.form['username']
             return redirect(url_for('welcome'))
-        flash("Oh no! Think of another username!")    
+        flash("Oh no! Think of another username. This one's taken!")    
     return render_template('signup.html')
 
 
