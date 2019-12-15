@@ -40,8 +40,7 @@ def login():
                             login_user['password']) == login_user['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for('welcome'))
-            flash("Uh oh! Bad username/password combination. Try again!")
-        flash("Uh oh! Bad username/password combination. Try again!")
+            flash("Uh oh! Bad username/password combination. Try again!") """ removed a flash - to test """
     return render_template('login.html')
 
 
