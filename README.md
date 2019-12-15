@@ -238,17 +238,16 @@ Once setup was complete, I started using Jinja templating language so I could ad
 
 ### Content
 
-- Textual content written by me but inspired by text in Wikipedia, IMDB and the Winona Ryder Forever fanclub: 
-
-https://en.wikipedia.org/wiki/Winona_Ryder
-https://www.imdb.com/name/nm0000213/
-https://winona-ryder.org/
+- Textual content taken, amended and rearranged from text in Wikipedia, IMDB and inspired by the Winona Ryder Forever fanclub:
+- https://en.wikipedia.org/wiki/Winona_Ryder
+- https://www.imdb.com/name/nm0000213/
+- https://winona-ryder.org/
 
 ### Media
 
-Images taken from Ecosia / Google Images
-Video on About page from Talltanic: https://youtu.be/6a5h3r3ziLw
-Stan featuring Dido video by Eminem:
+- Images taken from Ecosia / Google Images
+- Video on About page from Talltanic: https://youtu.be/6a5h3r3ziLw
+- Stan featuring Dido video by Eminem:
 www.youtube.com/embed/gOMhN-hfMtY
 
 ### Acknowledgements
