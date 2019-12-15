@@ -41,6 +41,7 @@ def login():
                 session['username'] = request.form['username']
                 return redirect(url_for('welcome'))
             flash("Uh oh! Bad username/password combination. Try again!")
+        flash("Uh oh! Bad username/password combination. Try again!")    
     return render_template('login.html')
 
 
@@ -85,13 +86,13 @@ def logout():
     return redirect(url_for('home'))
 
 
-"""Functions and routes to direct users to films page to see database entries, to add, edit, update and delete films from app and database"""
-
 @app.route('/about-us')
 def about_us():
     return render_template("about-us.html")
 
-
+"""
+Functions and routes to direct users to films page to see database entries, to add, edit, update and delete films from app and database.
+"""
 
 @app.route('/get_films')
 def get_films():
@@ -117,11 +118,13 @@ def insert_film():
     films.insert_one(request.form.to_dict())
     return redirect(url_for('get_films'))     
 
+
 @app.route('/edit_film/<film_id>')
 def edit_film(film_id):
     the_film = mongo.db.films.find_one({"_id": ObjectId(film_id)})
     all_genres = mongo.db.genres.find()
     return render_template('editfilm.html', film=the_film, genres=all_genres)    
+
 
 @app.route('/update_film/<film_id>', methods=["POST"])
 def update_film(film_id):
@@ -139,54 +142,12 @@ def update_film(film_id):
     })
     return redirect(url_for('get_films'))
 
+
 @app.route('/delete_film/<film_id>')
 def delete_film(film_id):
     mongo.db.films.delete_one({'_id': ObjectId(film_id)})
     return redirect(url_for('get_films'))
 
-@app.route('/get_genres')
-def get_genres():
-    if 'username' in session:
-        username = session['username']
-        return render_template('genres.html', genres=mongo.db.genres.find(), username=username)   
-    else:
-        return render_template('login.html')
-    
-
-
-@app.route('/edit_genre/<genre_id>')
-def edit_genre(genre_id):
-    return render_template('editgenre.html',genre=mongo.db.genres.find_one({'_id': ObjectId(genre_id)})) 
-
-
-@app.route('/update_genre/<genre_id>', methods=["POST"])
-def update_genre(genre_id):
-    mongo.db.genres.update(
-        {'_id': ObjectId(genre_id)},
-        {'genre_type':request.form.get('genre_type')})
-    return redirect(url_for('get_genres')) 
-
-
-@app.route('/delete_genre/<genre_id>')
-def delete_genre(genre_id):
-    mongo.db.genres.delete_one({'_id': ObjectId(genre_id)})
-    return redirect(url_for('get_genres'))     
-
-
-@app.route('/insert_genre', methods=['POST'])     
-def insert_genre():
-    genres = mongo.db.genres
-    genre_ins = {'genre_type': request.form.get('genre_type')}
-    mongo.db.genres.insert_one(genre_ins)
-    return redirect(url_for('get_genres'))  
-
-
-@app.route('/add_genre')
-def add_genre():
-    return render_template('addgenre.html')    
-  
-
-"""Route to about page"""
 
 @app.route('/about')
 def about():
