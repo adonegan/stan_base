@@ -99,10 +99,15 @@ span {
     font-size: 18px; /* for form submission styling */
 }
 
+button,
 a.green.accent-2.black-text.btn {
     font-weight: 600;
-    padding-left: 8px;
-    padding-right: 8px;
+    letter-spacing: .5px;
+    padding: 0 2rem;
+    vertical-align: middle;
+    height: 36px;
+    line-height: 36px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* ----------------------------------------------- Footer section ----------------------------------------------- */
@@ -193,7 +198,8 @@ h3.image-text {
 .login-title,
 .film-title,
 .about-form-title,
-.about-title {
+.about-title,
+.edit-form-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 40px;
     text-align: center;
@@ -260,7 +266,8 @@ a {
    color: #2e279d;
 }
 
-div.input-field.col.s12 {
+div.input-field.col.s12,
+div.input-field.col.s8 {
     font-family: 'Quicksand', sans-serif;
 }
 
