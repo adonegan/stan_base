@@ -1,87 +1,98 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h4>Edit Film</h4>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="edit-form-title">Edit this film record...</div>
+        </div>
+    </div>
+</div>
+
 <!----------------------------- form to users can input information -------------------------->
-<div class="row">
-    <form action="{{ url_for('update_film', film_id=film._id) }}" method="POST" class="col s12">
-        <div class="row">
-            <div class="input-field col s8">
-                <i class="material-icons prefix">movie</i>
-                <input id="film_name" name="film_name" type="text" class="validate" value="{{film.film_name}}">
-                <!--for adding text only-->
-                <label for="icon-prefix">Movie</label>
+<div class="container">
+    <div class="row">
+        <form action="{{ url_for('update_film', film_id=film._id) }}" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s8">
+                    <i class="material-icons prefix">movie</i>
+                    <input id="film_name" name="film_name" type="text" class="validate" value="{{film.film_name}}">
+                    <!--for adding text only-->
+                    <label for="icon-prefix">Movie</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">timeline</i>
+                    <input id="film_year" name="film_year" type="tel" class="validate" value="{{film.film_year}}">
+                    <!--for adding text only-->
+                    <label for="icon-prefix">Year</label>
+                </div>
             </div>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">timeline</i>
-                <input id="film_year" name="film_year" type="tel" class="validate" value="{{film.film_year}}">
-                <!--for adding text only-->
-                <label for="icon-prefix">Year</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">star</i>
-                <input id="co_stars" type="text" name="co_stars" class="validate" value="{{film.co_stars}}">
-                <!--for adding text only-->
-                <label for="icon-prefix">Co-stars</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">assessment</i>
-                <select id="genre" name="genre_type">
-                    <option value="" disabled selected>Choose Genre</option>
-                    <!--for selecting between options -->
-                    {% for gen in genres %}
-                    {% if gen.genre_type == film.genre_type%}
-                    <option value="{{gen.genre_type}}" selected>{{gen.genre_type}}</option>
-                    {% else %}
-                    <option value="{{gen.genre_type}}">{{gen.genre_type}}</option>
-                    {% endif %}
-                    {% endfor %}
-                </select>
-                <label>Genre</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">menu_book</i> 
-                <textarea id="film_plot" name="film_plot" class="materialize-textarea" class="validate"> {{film.film_plot}} </textarea>
-                <!--for adding longer text -->
-                <label for="icon-prefix">Plot</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">favorite</i>
-                <textarea id="film_rec" name="film_rec" class="materialize-textarea" class="validate">{{film.film_rec}}</textarea>
-                <!--for adding longer text -->
-                <label>Why I love this movie</label>
-            </div>
-        </div>
-        <div class="row" id="matfix">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">today</i>
-                <input id="date_watched" name="date_watched" type="text" class="datepicker">
-                <!--for including a date -->
-                <label for="icon_prefix">Date Watched</label>
-            </div>
-        </div>
-        <div class="row">
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">star</i>
-                    <input id="winona_stan" type="text" name="winona_stan" class="validate" value="{{film.winona_stan}}">
+                    <input id="co_stars" type="text" name="co_stars" class="validate" value="{{film.co_stars}}">
+                    <!--for adding text only-->
+                    <label for="icon-prefix">Co-stars</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assessment</i>
+                    <select id="genre" name="genre_type">
+                        <option value="" disabled selected>Choose Genre</option>
+                        <!--for selecting between options -->
+                        {% for gen in genres %}
+                        {% if gen.genre_type == film.genre_type%}
+                        <option value="{{gen.genre_type}}" selected>{{gen.genre_type}}</option>
+                        {% else %}
+                        <option value="{{gen.genre_type}}">{{gen.genre_type}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label>Genre</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">menu_book</i>
+                    <textarea id="film_plot" name="film_plot" class="materialize-textarea"
+                        class="validate"> {{film.film_plot}} </textarea>
+                    <!--for adding longer text -->
+                    <label for="icon-prefix">Plot</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">favorite</i>
+                    <textarea id="film_rec" name="film_rec" class="materialize-textarea"
+                        class="validate">{{film.film_rec}}</textarea>
+                    <!--for adding longer text -->
+                    <label>Why I love this movie</label>
+                </div>
+            </div>
+            <div class="row" id="matfix">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">today</i>
+                    <input id="date_watched" name="date_watched" type="text" class="datepicker">
+                    <!--for including a date -->
+                    <label for="icon_prefix">Date Watched</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">star</i>
+                    <input id="winona_stan" type="text" name="winona_stan" class="validate"
+                        value="{{film.winona_stan}}">
                     <!--for adding text only-->
                     <label for="icon-prefix">Stan</label>
                 </div>
             </div>
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Film
-                <i class="material-icons right">send</i>
-            </button>
-        </div>
-    </form>
+            <div class="row">
+                <button class="green accent-2 black-text btn" type="submit" name="action">Done
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
