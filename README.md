@@ -10,6 +10,8 @@ Why is the app called 'Stanbase'? It's a database that super fans can add to. Ac
 
 ## UX
 
+![alt text](/static/images/ux.jpg "Site responsiveness")
+
 The purpose of Stanbase is to document the user's / users' quest to watch and document every film their star has made. This Stanbase is based on the work of Winona Ryder. To start, users will be greeted by a static landing page where then can enter the website, then they'll need to either login or signup. When they're in the site, they can read and edit records of movies watched.
 
 At the beginning of the project, I enabled a genre dropdown list which could be modified by users. For example, if a genre wasn't there - like 'rom-com', they could create it on the Manage Genres page. However, I removed this feature because it wasn't a seamless user experience. For instance, halfway through the Add Film form, you would realise the genre wasn't listed and then have to go back to the Manage Genres page to add, and then re-do the form. Now, there's a simple dropdown list and users can only select one. 
